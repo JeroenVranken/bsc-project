@@ -28,3 +28,10 @@
 * Attended Deep Learning Lecture
 * Started working on project proposal
 
+### Tue 19 April
+* Created Presentation Draft
+* Created Planning Draft
+
+### Wed 20 April
+* Practiced Presentation
+* 
