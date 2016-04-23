@@ -34,4 +34,12 @@
 
 ### Wed 20 April
 * Practiced Presentation
-* 
+* Meeting with Stratis, talked about possible datasets
+
+### Thu 21 April
+* Finalized presentation
+* Started writing project proposal
+
+### Fri 22 April
+* Project proposal presentation
+* Finished Project proposal
