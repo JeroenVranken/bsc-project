@@ -43,3 +43,7 @@
 ### Fri 22 April
 * Project proposal presentation
 * Finished Project proposal
+
+## Week 5
+### Mon 25 April
+* DAS4 tutorial
