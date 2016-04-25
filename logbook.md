@@ -47,3 +47,4 @@
 ## Week 5
 ### Mon 25 April
 * DAS4 tutorial
+* Gained better understanding of LSTM networks through: http://colah.github.io/posts/2015-08-Understanding-LSTMs/ and http://deeplearning4j.org/lstm.html
