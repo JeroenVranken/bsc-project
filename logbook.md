@@ -48,3 +48,8 @@
 ### Mon 25 April
 * DAS4 tutorial
 * Gained better understanding of LSTM networks through: http://colah.github.io/posts/2015-08-Understanding-LSTMs/ and http://deeplearning4j.org/lstm.html
+* 
+### Tues 26 April
+* Learned the python-midi framework
+* Meeting with Stratis, decided to start with running DeepJazz on own data: https://jisungk.github.io/deepjazz/
+
