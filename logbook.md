@@ -49,7 +49,17 @@
 * DAS4 tutorial
 * Gained better understanding of LSTM networks through: http://colah.github.io/posts/2015-08-Understanding-LSTMs/ and http://deeplearning4j.org/lstm.html
 
-### Tues 26 April
+### Tue 26 April
 * Learned the python-midi framework
 * Meeting with Stratis, decided to start with running DeepJazz on own data: https://jisungk.github.io/deepjazz/
 
+### Wed 27 April
+* Kingsday
+
+### Thu 28 April
+* Work
+
+### Fri 29 April
+* Setup dependencies in DAS4 workspace
+* Reserved node 421 for a looong time (ssh node412)
+* Ran DeepJazz with one epoch to see if everything was setup correctly (it was)
