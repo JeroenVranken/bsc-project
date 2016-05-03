@@ -63,3 +63,14 @@
 * Setup dependencies in DAS4 workspace
 * Reserved node 421 for a looong time (ssh node412)
 * Ran DeepJazz with one epoch to see if everything was setup correctly (it was)
+
+## Week 6
+### Mon 2 May
+* Learned basics of music21
+* Installed musicXML viewer (finale notepad)
+* Read paper: https://arxiv.org/abs/1604.05358# 
+* Created code overview of DeepJazz
+
+### Tue 3 May
+* Discussed inner working of DeepJazz with Josef and Stratis, concluded that it uses too much preprocessing for our objective.
+* New plan: feed the network raw midi files, but encode midi in such a way that each frame going through the LSTM is of equal lenght. Basically 'unpacking' the MIDI file 
