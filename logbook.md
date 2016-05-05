@@ -73,4 +73,13 @@
 
 ### Tue 3 May
 * Discussed inner working of DeepJazz with Josef and Stratis, concluded that it uses too much preprocessing for our objective.
-* New plan: feed the network raw midi files, but encode midi in such a way that each frame going through the LSTM is of equal lenght. Basically 'unpacking' the MIDI file 
+* New plan: feed the network raw midi files, but encode midi in such a way that each frame going through the LSTM is of equal lenght. Basically 'unpacking' the MIDI file
+* Created encoder
+
+### Wed 4 May
+* Created decoder
+* Work
+
+### Thu 5 May
+* Fixed timing issue caused by controlChange events
+* Edited encoder to only encode a single track, instead of concatenating each track after another. For normal instruments this wasn't really a problem, but drum tracks sound quite weird when you put them on a piano roll
