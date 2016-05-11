@@ -83,3 +83,27 @@
 ### Thu 5 May
 * Fixed timing issue caused by controlChange events
 * Edited encoder to only encode a single track, instead of concatenating each track after another. For normal instruments this wasn't really a problem, but drum tracks sound quite weird when you put them on a piano roll
+
+### Fri 6 May
+* Wrote code to create training examples
+* First training with toy example (Major Scale)
+
+### Sat 7 May
+* Scale generation
+* Created directory iterator
+* Weight saving issue
+
+## Week 7
+
+### Mon 9 May
+* Solved weight saving issue, they are now saved as numpy array
+* First attempt at training with dataset
+* Resolution to high -> out of RAM
+
+### Tue 10 May
+* Work
+
+### Wed
+* Created code to lower MIDI-resolution, now more files can be loaded
+* Meeting with stratis
+* Training on 5% of dataset
