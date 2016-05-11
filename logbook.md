@@ -103,7 +103,7 @@
 ### Tue 10 May
 * Work
 
-### Wed
+### Wed 11 May
 * Created code to lower MIDI-resolution, now more files can be loaded
 * Meeting with stratis
 * Training on 5% of dataset
