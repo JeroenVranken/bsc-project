@@ -107,3 +107,9 @@
 * Created code to lower MIDI-resolution, now more files can be loaded
 * Meeting with stratis
 * Training on 5% of dataset
+
+### Thu 12 May
+* Started training a model on all classical files
+* Started training a model on all midi files
+* Fixed memory error issue (Some files are muuuch larger than others)
+
