@@ -98,7 +98,7 @@
 ### Mon 9 May
 * Solved weight saving issue, they are now saved as numpy array
 * First attempt at training with dataset
-* Resolution to high -> out of RAM
+* Resolution too high -> out of RAM
 
 ### Tue 10 May
 * Work
@@ -113,3 +113,18 @@
 * Started training a model on all midi files
 * Fixed memory error issue (Some files are muuuch larger than others)
 
+### Fri 13 May
+* First generation of music
+* Values seem to die out
+
+## Week 8
+
+### Mon 16 May
+* Generation error is probably due to activation layer being a softmax. This makes sure all outputs sum to one which is undesired behaviour.
+* Discovered error in midi_to_enc. Ticks we're incorrectly calculated due to integer/float division
+
+### Tue 17 May
+* Meeting Stratis
+* Changed structure of network, now using linear and sigmoid output layers, finaly layer has L1 regularization (to increase sparsity in output)
+* Fixed encoding error
+* Started training of linear and sigmoid network
