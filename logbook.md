@@ -128,3 +128,13 @@
 * Changed structure of network, now using linear and sigmoid output layers, finaly layer has L1 regularization (to increase sparsity in output)
 * Fixed encoding error
 * Started training of linear and sigmoid network
+
+### Wed 18 May
+* Work
+
+### Thu 19 May
+* Generated with newly trained models, sigmoid has really weird behaviour (All notes playing at once and then nothing). Linear does seem promising, the first generated tick is usually a nice continuation of the input, but then it seems to get stuck in the same pattern.
+
+### Fri 20 May
+* Discussion with Joseph about continuation error.
+* Started writing report
