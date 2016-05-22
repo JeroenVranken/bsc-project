@@ -138,3 +138,11 @@
 ### Fri 20 May
 * Discussion with Joseph about continuation error.
 * Started writing report
+
+### Sat 21 May
+* Talked to stratis, he suggested using a smaller sequence size.
+* DAS4 down, so not possible to try it out.
+* Wrote about preprocessing / encoding of data 
+
+### Sun 22 May
+* DAS4 still down
