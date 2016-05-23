@@ -146,3 +146,7 @@
 
 ### Sun 22 May
 * DAS4 still down
+
+### Mon 23 May
+* Trained three models with a shorter sequence size (32), with depth 1, 2, and 3 respectively. The one with depth 3 seemed most promising, but the produced velocities are really low and quickly die out. It does seem to have a feeling for music, as all generated notes are within the key and even generated within that key that weren't in the input sequence.
+* Wrote some code to manage files / folder structure, was getting messy.
