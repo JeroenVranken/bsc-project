@@ -150,3 +150,15 @@
 ### Mon 23 May
 * Trained three models with a shorter sequence size (32), with depth 1, 2, and 3 respectively. The one with depth 3 seemed most promising, but the produced velocities are really low and quickly die out. It does seem to have a feeling for music, as all generated notes are within the key and even generated within that key that weren't in the input sequence.
 * Wrote some code to manage files / folder structure, was getting messy.
+
+### Tue 24 May
+* Meeting Stratis, todo points:
+  1. Train network without any velocity values, just a binary encoding of on/off
+  2. Plot LSTM variables over time
+  3. Normalize velocity input to be between [0, 1]
+  4. Normalize velocity input to be between [-1, 1]
+  5. Boost current models while generating
+  6. Bin velocities to create one-hot encoding of note/velocity pairs
+  
+  
+  ii. 
