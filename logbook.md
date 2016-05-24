@@ -159,6 +159,3 @@
   4. Normalize velocity input to be between [-1, 1]
   5. Boost current models while generating
   6. Bin velocities to create one-hot encoding of note/velocity pairs
-  
-  
-  ii. 
