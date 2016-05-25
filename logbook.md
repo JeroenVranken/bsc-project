@@ -159,3 +159,6 @@
   4. Normalize velocity input to be between [-1, 1]
   5. Boost current models while generating
   6. Bin velocities to create one-hot encoding of note/velocity pairs
+
+### Wed 25 May
+* Network with binary values and sigmoid activation and binary crossentropy loss just generates a probability distribution, always the same output irregardless of input: (G - A -C - D)  all played at once and no end notes.
