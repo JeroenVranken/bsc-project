@@ -163,3 +163,11 @@
 ### Wed 25 May
 * Network with binary values and sigmoid activation and binary crossentropy loss just generates a probability distribution, always the same output irregardless of input: (G - A -C - D)  all played at once and no end notes.
 * Same with using mean_squared_error as loss function (Same distribution even)
+
+### Thu 26 May
+* Meeting with stratis
+* Probability distribution is possibly because of programming error.
+* Created midterm presentation
+
+### Fri 27 May
+* Midterm presentation
