@@ -28,4 +28,4 @@
 
 
 ### Possible Datasets:
-* http://www.kuhmann.com/Yamaha.htm -> Classical Disklavier I-VII and Jazz Diskalvier I-VI (Maybe Jazz standards as well)
+* http://www.kuhmann.com/Yamaha.htm -> Classical Disklavier I-VII and Jazz Disklavier I-VI (Maybe Jazz standards as well)
