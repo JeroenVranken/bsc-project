@@ -178,3 +178,18 @@
 
 ### Mon 30 May
 * Rewrote literature review for academic english assignment
+
+### Tue 31 May
+* Restructuring of code, using a ModelSettings class which holds all settings.
+
+### Wed 1 June
+* Work
+
+### Thu 2 June
+* Meeting with stratis & josef, josef had idea train network on one single track, see if it is able to replicate it.
+* Trained a 3-stacked LSTM with 32 sequence size, it was able to play moonlight sonata up until a part which was equal to later parts, and it got confused there.
+
+### Fri 3 June
+* Started training on 'only_classical' files with many different L1, L2 and dropout settings. Network is now usually able to generate indefinitely.
+
+
