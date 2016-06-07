@@ -192,4 +192,14 @@
 ### Fri 3 June
 * Started training on 'only_classical' files with many different L1, L2 and dropout settings. Network is now usually able to generate indefinitely.
 
+### Sat/Sun 4/5 June
+* Trained models with different settings (All with 512 hidden nodes per LSTM):
+  1. Sequence size 32, no regularisation, no dropout: Trained on only moonlight sonata, was able to reproduce it
+  2. Sequence size 32, L1 0,01: first silent, then all notes at once with high velocity
+  3. Sequence size 32, L2 0,01: Short and low velocity, some random notes after a long period of time
+  4. Sequence size 32, L1 0,001: High velocity only on start, afterwards sporadic output with velocities ranging from [1-4]
+  5. Sequence size 32, L1 0,001 after 7 iterations on only_classical: Gets stuck in the last notes played
+  6. Sequence size 64, L1 0,01, dropout 0.2: Interesting stuff!
+
+
 
