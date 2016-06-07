@@ -25,3 +25,7 @@
   * LSTM in Keras, examples - http://keras.io/examples/#sequence-classification-with-lstm
 
 ###### Recurrent Neural Networks in TensorFlow - https://www.tensorflow.org/versions/r0.7/tutorials/recurrent/index.html#recurrent-neural-networks
+
+
+### Possible Datasets:
+* http://www.kuhmann.com/Yamaha.htm -> Classical Disklavier I-VII and Jazz Disklavier I-VI (Maybe Jazz standards as well)
