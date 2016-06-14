@@ -202,4 +202,31 @@
   6. Sequence size 64, L1 0,01, dropout 0.2: Interesting stuff!
 
 
+## Week 11
 
+### Mon 6 June
+* Academic English college
+* Continued training on model 6
+* Meeting with Stratis, talked about how to implement genres
+
+
+### Tue 7 June
+* Started on implementation of genres, rewrote create_train_generate.py, generate_per_directory.py, midi_encoder.py and trainModel.py to accomodate genres
+
+### Wed 8 June
+* Work
+
+### Thu 9 June
+* Performed tests on various epochs
+* Finished Introduction / Academic English assignment 2
+
+### Sun 12 June
+* Tested the genre model with custom input: Same input but different genre results in different output!
+
+### Mon 13 June  
+* Continued testing with custom input
+  1. Single Notes (A - G)
+  2. Chords (Major, Minor)
+  3. Varying velocities
+
+  
