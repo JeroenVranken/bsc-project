@@ -192,4 +192,41 @@
 ### Fri 3 June
 * Started training on 'only_classical' files with many different L1, L2 and dropout settings. Network is now usually able to generate indefinitely.
 
+### Sat/Sun 4/5 June
+* Trained models with different settings (All with 512 hidden nodes per LSTM):
+  1. Sequence size 32, no regularisation, no dropout: Trained on only moonlight sonata, was able to reproduce it
+  2. Sequence size 32, L1 0,01: first silent, then all notes at once with high velocity
+  3. Sequence size 32, L2 0,01: Short and low velocity, some random notes after a long period of time
+  4. Sequence size 32, L1 0,001: High velocity only on start, afterwards sporadic output with velocities ranging from [1-4]
+  5. Sequence size 32, L1 0,001 after 7 iterations on only_classical: Gets stuck in the last notes played
+  6. Sequence size 64, L1 0,01, dropout 0.2: Interesting stuff!
 
+
+## Week 11
+
+### Mon 6 June
+* Academic English college
+* Continued training on model 6
+* Meeting with Stratis, talked about how to implement genres
+
+
+### Tue 7 June
+* Started on implementation of genres, rewrote create_train_generate.py, generate_per_directory.py, midi_encoder.py and trainModel.py to accomodate genres
+
+### Wed 8 June
+* Work
+
+### Thu 9 June
+* Performed tests on various epochs
+* Finished Introduction / Academic English assignment 2
+
+### Sun 12 June
+* Tested the genre model with custom input: Same input but different genre results in different output!
+
+### Mon 13 June  
+* Continued testing with custom input
+  1. Single Notes (A - G)
+  2. Chords (Major, Minor)
+  3. Varying velocities
+
+  
