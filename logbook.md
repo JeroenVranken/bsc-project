@@ -228,5 +228,7 @@
   1. Single Notes (A - G)
   2. Chords (Major, Minor)
   3. Varying velocities
+* Wrote overview of methodology
 
-  
+### Tue 14 June
+* Wrote MIDI, Dataset, preprocessing, genres
