@@ -53,7 +53,7 @@ def get_midi_events(pattern, resolution):
 	return midi_events, headerInfo, totalTicks
 
 
-def midi_to_array(settings, totalTicks, midi_events):
+def midi_to_array(settings, totalTicks, midi_events, genre):
 
 	currentTick = 0
 	'''
@@ -112,10 +112,21 @@ def midi_to_array(settings, totalTicks, midi_events):
 			except:
 				continue
 
+	if settings.genres:
+		if genre == 'classical':
+			enc[:, 128] = 128
+		elif genre == 'jazz':
+			enc[:, 129] = 128
 	return enc
 
 
 def array_to_midi(enc):
+
+	# If genre encoding are attached, remove
+	# if (len(enc[0]) > 128):
+	# 	enc = enc[:, 0:127]
+
+
 	track = midi.Track()
 	
 	currentVector = np.zeros(len(enc[0]))
@@ -185,7 +196,7 @@ def midi_to_array_genre(settings, totalTicks, midi_events, genre):
 					if (midi.NoteOffEvent == type(event)):
 						enc[currentTick][event.pitch] = 0
 					else:
-						if settings.convert:
+						if settings.convertVelocity:
 							enc[currentTick][event.pitch] = convertVelocityNegPos(event.pitch)
 						else:
 							if (event.velocity > 0):
@@ -211,7 +222,7 @@ def midi_to_array_genre(settings, totalTicks, midi_events, genre):
 					if (midi.NoteOffEvent == type(event)):
 						enc[currentTick][event.pitch] = 0
 					else:	
-						if settings.convert:
+						if settings.convertVelocity:
 							enc[currentTick][event.pitch] = convertVelocityNegPos(event.pitch)
 						else:
 							if (event.velocity > 0):
@@ -227,51 +238,6 @@ def midi_to_array_genre(settings, totalTicks, midi_events, genre):
 		enc[:, 129] = 128
 	return enc
 
-
-
-def array_to_midi(enc):
-	
-	# If genre encoding are attached, remove
-	if len(enc[0] > 128):
-		enc = enc[:, 0:127]
-
-	track = midi.Track()
-	
-	currentVector = np.zeros(len(enc[0]))
-
-	tickDifference = -1
-
-	for i, tick in enumerate(enc):
-
-		nextVector = enc[i]
-		tickDifference += 1
-
-		if not np.array_equal(currentVector, nextVector):
-			diff = currentVector - nextVector
-			# print diff
-			for pitch, dVelocity in enumerate(diff):
-				if (dVelocity != 0):
-					if nextVector[pitch] < 1: # Create noteoff event in case of 0
-						# track.append(midi.NoteOffEvent(tick=tickDifference,  pitch=pitch, velocity=(nextVector[pitch])))
-						track.append(midi.NoteOffEvent(tick=tickDifference,  pitch=pitch, velocity=(0)))
-					else:
-						track.append(midi.NoteOffEvent(tick=tickDifference,  pitch=pitch, velocity=(0)))
-						track.append(midi.NoteOnEvent(tick=tickDifference,  pitch=pitch, velocity=(nextVector[pitch])))
-					tickDifference = 0
-				# tickDifference = 0
-		# else:
-			# tickDifference += 1
-
-		currentVector = nextVector	
-
-
-		nextVector = enc[i]
-	
-	# Add noteOffEvent on all tracks
-	for p in range(128):
-		track.append(midi.NoteOffEvent(tick=0,  pitch=p, velocity=(0)))
-	
-	return track
 
 #-------------------------------Code------------------------------------------#
 

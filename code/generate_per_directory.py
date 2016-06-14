@@ -26,12 +26,10 @@ def generate_next(input_sequence, model, settings):
 #-------------------------------------Code-------------------------------------
 
 
-def generate_per_directory(model, settings, directory, smoothVelocities):
-
+def generate_per_directory(model, settings, directory, smoothVelocities, genre):
 
 	filePaths = getFilePaths(directory, '.mid')
 	for singleFile in filePaths:
-
 		# Create empty arrays
 		prediction_input = np.zeros((1, settings.sequence_size, settings.N_values), int)
 		generated_encoding = np.zeros((settings.sequence_size + settings.generate_length, settings.N_values), dtype=int)
@@ -39,8 +37,8 @@ def generate_per_directory(model, settings, directory, smoothVelocities):
 		# Read file and convert to encoding
 		pattern = midi.read_midifile(singleFile)
 		midi_events, headerInfo, totalTicks = get_midi_events(pattern, settings.resolution)
-		encoded_input = midi_to_array(settings, totalTicks, midi_events)	
-
+		encoded_input = midi_to_array(settings, totalTicks, midi_events, genre)
+	
 		# Put song in input
 		prediction_input[0] = encoded_input[0:settings.sequence_size]
 
@@ -49,7 +47,7 @@ def generate_per_directory(model, settings, directory, smoothVelocities):
 			smooth = 'smooth'
 		else:
 			smooth = ''
-		output_file = 'generations/' + settings.filename + "/" + str(singleFile.split('/')[-1]) + "_l" + str(settings.generate_length) + smooth + ".mid"
+		output_file = 'generations/' + settings.filename + "/" + str(singleFile.split('/')[-1]) + "_l" + str(settings.generate_length) + smooth + genre + ".mid"
 		# count = 0
 		# while os.path.exists(output_file):
 		# 	output_file = 'generations/' + settings.filename + "/" + settings.filename + "_" + str(settings.generate_length) + "_" + str(count) + ".mid"
@@ -71,10 +69,13 @@ def generate_per_directory(model, settings, directory, smoothVelocities):
 			generated_encoding[i + settings.sequence_size] = predicted_tick
 			prediction_input = next_input
 
+		if (len(generated_encoding[0]) > 128):
+			generated_encoding = generated_encoding[:, 0:127]
+
 		# Post processing
 		for t, tick in enumerate(generated_encoding):
 			for p, val in enumerate(tick):
-				if (val <= 2):
+				if (val <= 5):
 					generated_encoding[t][p] = 0 # remove low velocity notes
 				elif (val > 128):
 					generated_encoding[t][p] = 128 # clip high velocity notes

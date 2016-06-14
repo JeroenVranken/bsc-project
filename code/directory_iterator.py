@@ -24,10 +24,11 @@ def getFilePaths(directoryPath, extension):
     count = 0
     for subdir, dirs, files in os.walk(directoryPath):
         for singleFile in files:
-            filepath = subdir + os.sep + singleFile
+        	if not singleFile.startswith('.'):
+	            filepath = subdir + os.sep + singleFile
 
-            if (filepath.endswith(extension)):
-                filePaths.append(filepath)
+	            if (filepath.endswith(extension)):
+                	filePaths.append(filepath)
 
     return filePaths
 

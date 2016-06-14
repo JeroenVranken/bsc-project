@@ -9,12 +9,12 @@ from save_load_model import *
 from directory_iterator import getFilePaths
 
 
-def reTrainModel(settings, epochs):
+def reTrainModel(settings, epochs, batch):
 	originalFilename = settings.filename
 	loadFilename = settings.filename
 	for i in range (epochs):
 		settings.filename = loadFilename
-		model = load_model_scratch(settings, batch=706, loadWeights=True)
+		model = load_model_scratch(settings, batch, loadWeights=True)
 		settings.filename = originalFilename + "_ep" + str(i+1)
 		loadFilename = settings.filename
 		if settings.genres:
@@ -25,6 +25,7 @@ def reTrainModel(settings, epochs):
 
 
 def trainModel(model, settings):
+	genre = ''
 
 	print "Training model with the following settings:"
 	for (setting, value) in vars(settings).items():
@@ -36,7 +37,7 @@ def trainModel(model, settings):
 
 	# Training settings
 	N_epochs = 1
-	training_file_amount = 400
+	training_file_amount = 0
 	model_batch_size = 240
 	filePathIndex = 0
 
@@ -59,7 +60,7 @@ def trainModel(model, settings):
 			filePathIndex += 1
 
 			midi_events, headerInfo, totalTicks = get_midi_events(pattern, settings.resolution)
-			enc = midi_to_array(totalTicks, midi_events, settings.convertVelocity)
+			enc = midi_to_array(settings, totalTicks, midi_events, genre)
 
 			# cut the corpus in semi-redundant sequences of sequence_size values
 			for i in range(0, len(enc) - settings.sequence_size, settings.step):
@@ -112,7 +113,7 @@ def trainModelGenres(model, settings):
 		genre = ''
 
 		print("Loading files")
-		while (len(input_sequences) < 140000):
+		while (len(input_sequences) < 100000):
 
 			if (filePathIndex % 2 == 0):
 				genre = 'classical'
@@ -129,7 +130,8 @@ def trainModelGenres(model, settings):
 
 			midi_events, headerInfo, totalTicks = get_midi_events(pattern, settings.resolution)
 			
-			enc = midi_to_array_genre(settings, totalTicks, midi_events, genre)
+			# enc = midi_to_array_genre(settings, totalTicks, midi_events, genre)
+			enc = midi_to_array(settings, totalTicks, midi_events, genre)
 
 			# cut the corpus in semi-redundant sequences of sequence_size values
 			for i in range(0, len(enc) - settings.sequence_size, settings.step):

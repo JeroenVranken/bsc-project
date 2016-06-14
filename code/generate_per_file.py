@@ -25,7 +25,7 @@ def generate_next(input_sequence, model, settings):
 #-------------------------------------Code-------------------------------------
 
 
-def generate_per_file(model, settings, singleFile, smoothVelocities):
+def generate_per_file(model, settings, singleFile, smoothVelocities, genre):
 
 	# Create empty arrays
 	prediction_input = np.zeros((1, settings.sequence_size, settings.N_values), int)
@@ -34,7 +34,7 @@ def generate_per_file(model, settings, singleFile, smoothVelocities):
 	# Read file and convert to encoding
 	pattern = midi.read_midifile(singleFile)
 	midi_events, headerInfo, totalTicks = get_midi_events(pattern, settings.resolution)
-	encoded_input = midi_to_array(settings, totalTicks, midi_events)
+	encoded_input = (settings, totalTicks, midi_events, genre)
 
 	# Put song in input
 	prediction_input[0] = encoded_input[0:settings.sequence_size]

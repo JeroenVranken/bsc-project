@@ -34,27 +34,24 @@ settings.dropoutAmount = 0.2
 settings.l1Amount = 0.1
 settings.l2Amount = 0
 settings.batch_size = 900
-settings.N_epochs = 1
 settings.sequence_size = 64
-settings.N_values = 128
-settings.resolution = 8
-settings.step = 1
-# settings.directoryPath = '/home/jvranken/Disklavier/only_classical'
-settings.directoryPath = '/home/jvranken/Disklavier/only_jazz'
-settings.trainingset = 'classical_jazz'
+settings.trainingset = 'only_jazz'
+settings.directoryPath = '/home/jvranken/Disklavier/' + settings.trainingset
 settings.convertVelocity = False
-settings.generate_length = 512
-settings.modelType = 'normal'
-settings.genres = False
+settings.generate_length = 128
+settings.genres = True
+
+if settings.genres:
+	settings.N_values = 130
 
 
 # settings.filename = 'linear_only_classical_nodes512_depth3_seq64_drop0.2_L1r0.1_L2r0_ep10'
-settings.filename = 'linear_only_classical_nodes512_depth3_seq64_drop0.2_L1r0.1_L2r0'
-# settings.filename = 'linear_classical_jazz_nodes512_depth3_seq64_drop0.2_L1r0.1_L2r0'
+# settings.filename = 'linear_only_classical_nodes512_depth3_seq64_drop0.2_L1r0.1_L2r0'
+settings.filename = 'linear_classical_jazz_nodes512_depth3_seq64_drop0.2_L1r0.1_L2r0_ep7_ep27'
 
 
-# model = load_model_scratch(settings, batch=706, loadWeights=True)
-model = load_model_scratch(settings, batch=991, loadWeights=True)
+model = load_model_scratch(settings, batch=706, loadWeights=True)
+# model = load_model_scratch(settings, batch=991, loadWeights=True)
 # model = load_model_scratch(settings, batch=1391, loadWeights=True)
 # model.smoothDifference = 5
 # print vars(settings)
@@ -66,14 +63,17 @@ model = load_model_scratch(settings, batch=991, loadWeights=True)
 
 # start = time.time()
 # trainModelGenres(model, settings)
+trainModel(model, settings)
 # end = time.time()
 # print "training took %d second" % (end-start) 
 
-# generate_per_directory(model, settings, '/home/jvranken/multiple/set3', smoothVelocities=True)
-# reTrainModel(settings, epochs=10)
+# generate_per_directory(model, settings, '/home/jvranken/multiple/melody', smoothVelocities=True, genre='jazz')
+# generate_per_directory(model, settings, '/home/jvranken/multiple/melody', smoothVelocities=True, genre='classical')
+# reTrainModel(settings, epochs=50, batch=706)
+
 # 165-Satie Eric - Gymnopedie No-3.mid
 # generate_per_file(model, settings, '/home/jvranken/single/moonlight/026-Beethoven - Moonlight Sonata Op-27 No-2 Mvt-1.mid', smoothVelocities=False)
-generate_per_file(model, settings, '/home/jvranken/multiple/set4/blues.mid', smoothVelocities=False)
+# generate_per_file(model, settings, '/home/jvranken/multiple/set4/blues.mid', smoothVelocities=False)
 # generate_per_file(model, settings, '/home/jvranken/multiple/set4/melody.mid', smoothVelocities=True)
 # generate_per_directory(model, settings, '/home/jvranken/multiple/set3', smoothVelocities=False)
 
