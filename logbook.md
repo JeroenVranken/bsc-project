@@ -223,6 +223,8 @@
 ### Sun 12 June
 * Tested the genre model with custom input: Same input but different genre results in different output!
 
+## Week 12
+
 ### Mon 13 June  
 * Continued testing with custom input
   1. Single Notes (A - G)
@@ -250,3 +252,5 @@
 * Digitized survey results
 * Analyzed survey results
 * Wrote layout of results section
+
+## Week 13
