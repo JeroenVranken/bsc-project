@@ -232,3 +232,21 @@
 
 ### Tue 14 June
 * Wrote MIDI, Dataset, preprocessing, genres
+
+### Wed 15 June
+* Wrote network layout, training
+
+### Thu 16 June
+* Meeting with stratis, decided to conduct a survey
+* Wrote generating, post-processing
+
+### Fri 17 June
+* Created and conducted survey
+
+### Sat 18 June
+* Wrote LSTM explananation
+
+### Sun 19 June
+* Digitized survey results
+* Analyzed survey results
+* Wrote layout of results section
